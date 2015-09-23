@@ -78,10 +78,10 @@ task normalizeJarName(type: Copy) {
     rename(jar.baseName + '-' + openmrsVersion + '.jar', 'openmrs.jar')
 }
 
-task dist(dependsOn: ['build', 'downloadMRSWar', 'normalizeJarName'], type: Rpm) {
+task dist(dependsOn: ['build',  'normalizeJarName'], type: Rpm) {
     packageName 'openmrs'
-    version "1"
-    release "11.3"
+    version "1.11.3"
+    release "1"
     arch NOARCH
     os LINUX
 

@@ -23,9 +23,15 @@ ln -s /opt/openmrs/log /var/log/openmrs
 
 chkconfig --add openmrs
 
+#copy configs
+cp -f /opt/openmrs/etc/log4j.xml /opt/openmrs/openmrs/WEB-INF/classes/
+#cp -f /opt/openmrs/etc/web.xml /opt/openmrs/openmrs/WEB-INF/
+
+
 # permissions
 chown -R bahmni:bahmni /opt/openmrs
 chown -R bahmni:bahmni /var/log/openmrs
 chown -R bahmni:bahmni /var/run/openmrs
 chown -R bahmni:bahmni /etc/init.d/openmrs
 chown -R bahmni:bahmni /etc/openmrs
+
